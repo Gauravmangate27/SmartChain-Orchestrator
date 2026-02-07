@@ -1,63 +1,73 @@
-# 🚀 Automated Supply Chain Analytics Project  
+# SmartChain-Orchestrator
 
-[![YouTube Demo](https://img.shields.io/badge/Watch-Demo-red?logo=youtube&style=for-the-badge)](https://youtu.be/0dJ89-65dLE?si=hAgE1VrwbsxWOHLn)
+A fully automated supply chain analytics pipeline using n8n for workflow orchestration and Quadratic AI for intelligent data insights.
 
-This project demonstrates a **fully automated supply chain analytics pipeline** powered by **n8n** for automation and **Quadratic AI** for intelligent insights.  
+This project creates an end-to-end, real-time data pipeline that ingests supply chain information from email attachments, stores it in a PostgreSQL database (Supabase), generates AI-powered insights, and delivers automated reports — all without manual intervention.
 
-It connects your **email → PostgreSQL (Supabase) → AI Insights → Automated Reports**, enabling **real-time analytics** without manual intervention.  
+Live Demo Video: [Automated Supply Chain Analytics Project](https://youtu.be/0dJ89-65dLE?si=hAgE1VrwbsxWOHLn)  
+Repository: https://github.com/Gauravmangate27/SmartChain-Orchestrator
 
----
+## Overview
 
-## ✨ Features  
+The system automates the entire supply chain data lifecycle:
 
-✅ Fetches new emails **every 1 minute**  
-📎 Reads and extracts **CSV attachments**  
-🧹 Cleans, parses, and validates incoming supply chain data  
-📦 Stores structured data into **PostgreSQL (Supabase)**  
-🧠 Generates AI-driven insights using **Quadratic AI** (via natural language prompts)  
-📧 Sends out **automated supply chain reports** via email — every minute!  
+- Monitors email inbox for new messages (checked every 1 minute)  
+- Extracts and processes CSV attachments containing supply chain data  
+- Cleans, validates, and structures the data  
+- Stores records in Supabase (PostgreSQL)  
+- Uses Quadratic AI to analyze data via natural language prompts and generate actionable insights  
+- Automatically emails summarized reports to stakeholders  
 
----
+**Important Note**  
+This project is designed for demonstration, learning, and prototyping purposes. Production use should include proper security hardening, error handling, rate limiting, and compliance checks (especially for email and data privacy).
 
-## 🛠️ Tech Stack  
+## Features
 
-- **n8n** – Workflow automation  
-- **Supabase (PostgreSQL)** – Cloud database  
-- **Quadratic AI** – Natural language AI insights  
-- **Email (IMAP/SMTP)** – Data ingestion + reporting  
-- **CSV Parsing** – Automated file handling  
+- Automatic email polling every 60 seconds (IMAP)  
+- Extraction and parsing of CSV attachments  
+- Data cleaning, validation, and transformation  
+- Persistent storage in cloud-hosted PostgreSQL (Supabase)  
+- Natural language–driven AI analysis using Quadratic AI  
+- Automated email delivery of insight reports (SMTP)  
+- No-code/low-code implementation via n8n workflows  
 
----
+## Tech Stack
 
-## 📂 Workflow Overview  
+| Component              | Technology/Tool              | Purpose                              |
+|------------------------|------------------------------|--------------------------------------|
+| Workflow Automation    | n8n                          | Orchestrates the entire pipeline     |
+| Database               | Supabase (PostgreSQL)        | Structured data storage              |
+| AI Insights            | Quadratic AI                 | Natural language data analysis       |
+| Email Integration      | IMAP / SMTP                  | Data ingestion and report delivery   |
+| File Processing        | Built-in n8n nodes + parsing | CSV handling and validation          |
 
-1. **Email Listener**: n8n checks inbox every minute  
-2. **CSV Handler**: Reads, parses, and validates attached CSV files  
-3. **Database Storage**: Uploads cleaned data into Supabase PostgreSQL  
-4. **AI Insights**: Quadratic AI processes the data with natural language prompts  
-5. **Report Sender**: Automatically emails insights back to stakeholders  
+## Workflow Steps
 
----
+1. **Email Listener** — n8n polls the inbox at 1-minute intervals for new messages with CSV attachments.  
+2. **Attachment Processing** — Downloads, reads, parses, cleans, and validates CSV data.  
+3. **Data Storage** — Inserts cleaned records into Supabase PostgreSQL tables.  
+4. **AI Analysis** — Quadratic AI queries the database and generates insights based on predefined natural language prompts.  
+5. **Report Generation & Delivery** — Compiles insights into a formatted report and sends it via email to designated recipients.
 
-## ⚡ Demo  
+## Example Use Cases
 
-🎥 Watch the live demo here:  
-👉 [Automated Supply Chain Analytics Project (YouTube)](https://youtu.be/0dJ89-65dLE?si=hAgE1VrwbsxWOHLn)
+- Real-time monitoring of supply chain KPIs (inventory levels, delays, stockouts)  
+- Automated daily/ hourly inventory and performance reports  
+- AI-assisted demand forecasting and anomaly detection  
+- Zero-touch data integration from suppliers/vendors via email  
 
----
+## Getting Started
 
-## 📊 Example Use Cases  
+### Prerequisites
 
-- Real-time **supply chain monitoring**  
-- Automated **inventory reports**  
-- AI-powered **demand forecasting**  
-- Zero-manual **data integration pipeline**  
+- n8n instance (self-hosted or cloud)  
+- Supabase project with PostgreSQL database  
+- Quadratic AI account (free tier available at https://www.quadratichq.com/)  
+- Email account credentials with IMAP/SMTP access  
 
----
+### Installation
 
-## 🚀 Getting Started  
-
-1. Clone this repository  
+1. Clone the repository
    ```bash
-    git clone https://github.com/Gauravmangate27/SmartChain-Orchestrator.git
-    cd SmartChain-Orchestrator
+   git clone https://github.com/Gauravmangate27/SmartChain-Orchestrator.git
+   cd SmartChain-Orchestrator
